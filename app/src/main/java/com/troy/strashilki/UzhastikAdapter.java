@@ -1,14 +1,14 @@
-package com.troy.uzhastiki;
+package com.troy.strashilki;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -36,9 +36,9 @@ public class UzhastikAdapter extends RecyclerView.Adapter<UzhastikAdapter.Uzhast
     public void onBindViewHolder(@NonNull UzhastikViewHolder viewHolder, int i) {
         UzhastikItem uzhastikItem = UzhastikItemsItems.get(i);
 
-        viewHolder.pizzaImageView.setImageResource(uzhastikItem.getImageResource());
+
         viewHolder.title.setText(uzhastikItem.getTitle());
-        viewHolder.description.setText(uzhastikItem.getDescription());
+
     }
 
     @Override
@@ -49,17 +49,17 @@ public class UzhastikAdapter extends RecyclerView.Adapter<UzhastikAdapter.Uzhast
     class UzhastikViewHolder extends RecyclerView.ViewHolder implements
             View.OnClickListener {
 
-        public ImageView pizzaImageView;
+
         public TextView title;
-        public TextView description;
+
 
         public UzhastikViewHolder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
 
-            pizzaImageView = itemView.findViewById(R.id.pizzaImageView);
+
             title = itemView.findViewById(R.id.titleTextView);
-            description = itemView.findViewById(R.id.descriptionTextView);
+
         }
 
         @Override
@@ -70,9 +70,9 @@ public class UzhastikAdapter extends RecyclerView.Adapter<UzhastikAdapter.Uzhast
 
 
             Intent intent = new Intent(context, ReaderActivity.class);
-            intent.putExtra("imageResource", uzhastikItem.getImageResource());
+
             intent.putExtra("title", uzhastikItem.getTitle());
-            intent.putExtra("description", uzhastikItem.getDescription());
+
             intent.putExtra("recipe", uzhastikItem.getRecipe());
             context.startActivity(intent);
         }

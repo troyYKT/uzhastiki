@@ -1,4 +1,4 @@
-package com.troy.uzhastiki;
+package com.troy.strashilki;
 
 public class UzhastikItem {
 
@@ -7,7 +7,7 @@ public class UzhastikItem {
     private String description;
     private String recipe;
 
-    public UzhastikItem(int imageResource, String title, String description,
+    public UzhastikItem(String title,
                         String recipe) {
         this.imageResource = imageResource;
         this.title = title;
