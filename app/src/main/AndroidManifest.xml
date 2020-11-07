@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.troy.strashilki">
+    package="com.troy.uzhastiki">
     <uses-permission android:name="android.permission.INTERNET"/>
 
 
@@ -16,7 +16,7 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3727697994870495~9613913446"   />
-        <activity android:name="com.troy.strashilki.MainActivity">
+        <activity android:name="com.troy.uzhastiki.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +24,7 @@
             </intent-filter>
 
         </activity>
-        <activity android:name="com.troy.strashilki.ReaderActivity"/>
+        <activity android:name="com.troy.uzhastiki.ReaderActivity"/>
 
 
 

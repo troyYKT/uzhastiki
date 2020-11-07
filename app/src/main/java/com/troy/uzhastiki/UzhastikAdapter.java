@@ -1,4 +1,4 @@
-package com.troy.strashilki;
+package com.troy.uzhastiki;
 
 import android.content.Context;
 import android.content.Intent;

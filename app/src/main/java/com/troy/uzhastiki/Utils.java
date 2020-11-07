@@ -1,4 +1,4 @@
-package com.troy.strashilki;
+package com.troy.uzhastiki;
 
 public class Utils {
 

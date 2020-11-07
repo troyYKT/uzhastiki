@@ -1,4 +1,4 @@
-package com.troy.strashilki;
+package com.troy.uzhastiki;
 
 import org.junit.Test;
 

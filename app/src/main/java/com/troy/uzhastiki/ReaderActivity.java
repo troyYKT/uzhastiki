@@ -1,4 +1,4 @@
-package com.troy.strashilki;
+package com.troy.uzhastiki;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,7 +23,7 @@ public class ReaderActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        TextView title = findViewById(R.id.titleTextView);
+
         TextView recipe = findViewById(R.id.storyTextView);
 
         Intent intent = getIntent();
