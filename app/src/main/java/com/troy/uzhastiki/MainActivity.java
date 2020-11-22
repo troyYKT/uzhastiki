@@ -34,9 +34,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
 
 
 
@@ -114,6 +112,36 @@ public class MainActivity extends AppCompatActivity {
                 Utils.STORY_34_TITLE,Utils.STORY_34));
         UzhastikItemsItems.add(new UzhastikItem(
                 Utils.STORY_35_TITLE,Utils.STORY_35));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_36_TITLE,Utils.STORY_36));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_37_TITLE,Utils.STORY_37));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_38_TITLE,Utils.STORY_38));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_39_TITLE,Utils.STORY_39));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_40_TITLE,Utils.STORY_40));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_41_TITLE,Utils.STORY_41));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_42_TITLE,Utils.STORY_42));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_43_TITLE,Utils.STORY_43));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_44_TITLE,Utils.STORY_44));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_45_TITLE,Utils.STORY_45));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_46_TITLE,Utils.STORY_46));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_47_TITLE,Utils.STORY_47));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_48_TITLE,Utils.STORY_48));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_49_TITLE,Utils.STORY_49));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_50_TITLE,Utils.STORY_50));
 
 
 
