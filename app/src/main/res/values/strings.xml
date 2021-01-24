@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Страшилки</string>
+    <string name="about">Вы можете отправить свою историю, либо написать пожелание какой функционал хотели бы видеть.</string>
 </resources>
