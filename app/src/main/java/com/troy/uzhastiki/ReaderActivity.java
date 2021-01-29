@@ -12,13 +12,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.Objects;
 
 
 public class ReaderActivity extends AppCompatActivity {
-    AdView mAdView;
     SharedPreferences sharedPreferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +27,6 @@ public class ReaderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reader);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-        mAdView = findViewById(R.id.adView2);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
         TextView recipe = findViewById(R.id.storyTextView);
 
         sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
