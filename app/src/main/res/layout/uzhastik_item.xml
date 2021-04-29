@@ -5,26 +5,20 @@
     android:layout_height="wrap_content"
     android:layout_margin="1dp"
     app:cardCornerRadius="4dp">
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#102750">
-
-
         <TextView
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:gravity="center"
             android:text="Title"
             android:textColor="@color/white"
-            android:textSize="20sp" />
-
-
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp" />
     </RelativeLayout>
-
 </androidx.cardview.widget.CardView>

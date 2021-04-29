@@ -2,6 +2,7 @@ package com.troy.uzhastiki;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Adapter adapter;
     LayoutManager layoutManager;
-
+    private InterstitialAd mInterstitialAd;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -43,9 +45,7 @@ public class MainActivity extends AppCompatActivity {
             Intent openAbout = new Intent(this, AboutActivity.class);
             startActivity(openAbout);
             return true;
-
         }
-
         return super.onOptionsItemSelected(item);
     }
     @Override
@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
         //инициализация рекламы
         MobileAds.initialize(this, initializationStatus -> {
         });
-
 
         ArrayList<UzhastikItem> UzhastikItemsItems = new ArrayList<>();
 
@@ -160,6 +159,50 @@ public class MainActivity extends AppCompatActivity {
                 Utils.STORY_49_TITLE, Utils.STORY_49));
         UzhastikItemsItems.add(new UzhastikItem(
                 Utils.STORY_50_TITLE, Utils.STORY_50));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_51_TITLE, Utils.STORY_51));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_52_TITLE, Utils.STORY_52));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_53_TITLE, Utils.STORY_53));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_54_TITLE, Utils.STORY_54));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_55_TITLE, Utils.STORY_55));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_56_TITLE, Utils.STORY_56));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_57_TITLE, Utils.STORY_57));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_58_TITLE, Utils.STORY_58));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_59_TITLE, Utils.STORY_59));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_60_TITLE, Utils.STORY_60));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_61_TITLE, Utils.STORY_61));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_62_TITLE, Utils.STORY_62));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_63_TITLE, Utils.STORY_63));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_64_TITLE, Utils.STORY_64));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_65_TITLE, Utils.STORY_65));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_66_TITLE, Utils.STORY_66));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_67_TITLE, Utils.STORY_67));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_68_TITLE, Utils.STORY_68));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_69_TITLE, Utils.STORY_69));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_70_TITLE, Utils.STORY_70));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_71_TITLE, Utils.STORY_71));
+        UzhastikItemsItems.add(new UzhastikItem(
+                Utils.STORY_72_TITLE, Utils.STORY_72));
 
 
         recyclerView = findViewById(R.id.recyclerView);
@@ -169,17 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);
-
-
-
-
     }
-
-
-
-
-
-
 }
 
 

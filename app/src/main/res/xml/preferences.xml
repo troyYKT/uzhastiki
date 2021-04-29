@@ -8,6 +8,7 @@
         android:entryValues="@array/pref_text_size_values"
         android:key="text_size"
         android:title="Размер шрифта"
+       
 
 
         />
@@ -17,6 +18,7 @@
         android:entryValues="@array/pref_text_style_values"
         android:key="text_style"
         android:title="Стиль текста"
+
         />
 
 </PreferenceScreen>
