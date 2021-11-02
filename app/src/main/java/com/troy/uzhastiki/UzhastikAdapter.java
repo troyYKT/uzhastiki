@@ -64,20 +64,20 @@ public class UzhastikAdapter extends RecyclerView.Adapter<UzhastikAdapter.Uzhast
                 public void onAdLoaded() {
                     if (mInterstitialAd.isLoaded()){
                         mInterstitialAd.show();}
-                    }
+                }
                 public void onAdClosed() {
                     // Code to be executed when the interstitial ad is closed.
                     mInterstitialAd.loadAd(new AdRequest.Builder().build());
                 }
             });
-            }
-            public void onStartAct(){
-                int position = getAdapterPosition();
-                UzhastikItem uzhastikItem = UzhastikItemsItems.get(position);
-                Intent intent = new Intent(context, ReaderActivity.class);
-                intent.putExtra("title", uzhastikItem.getTitle());
-                intent.putExtra("story", uzhastikItem.getStory());
-                context.startActivity(intent);
-            }
+        }
+        public void onStartAct(){
+            int position = getAdapterPosition();
+            UzhastikItem uzhastikItem = UzhastikItemsItems.get(position);
+            Intent intent = new Intent(context, ReaderActivity.class);
+            intent.putExtra("title", uzhastikItem.getTitle());
+            intent.putExtra("story", uzhastikItem.getStory());
+            context.startActivity(intent);
         }
     }
+}

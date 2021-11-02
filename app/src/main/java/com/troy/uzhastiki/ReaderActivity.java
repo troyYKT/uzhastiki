@@ -10,10 +10,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
-
 import java.util.Objects;
 
 
@@ -55,14 +51,8 @@ public class ReaderActivity extends AppCompatActivity {
                 story.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
                 break;
         }
-
-
-
-
-
         Intent intent = getIntent();
         if (intent != null) {
-
             story.setText(intent.getStringExtra("story"));
         }
     }

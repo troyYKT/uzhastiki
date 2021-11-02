@@ -19,6 +19,7 @@
         android:key="text_style"
         android:title="Стиль текста"
 
+
         />
 
 </PreferenceScreen>

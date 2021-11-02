@@ -13,6 +13,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Страшилки">
 
+        <activity android:name=".UserActivity"
+
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARRENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+        <activity android:name=".RealActivity"
+
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARRENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+        <activity android:name=".StoryActivity"
+
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARRENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
         <activity android:name=".AboutActivity"
             android:label="Оценить"
             android:parentActivityName=".MainActivity">
