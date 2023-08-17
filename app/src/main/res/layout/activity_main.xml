@@ -31,15 +31,7 @@
         android:background="@drawable/round"
         />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Присланные пользователями"
-        android:textColor="@color/white"
-        android:onClick="userBtn"
-        style="@style/Widget.Button"
-        android:background="@drawable/round"
-        />
+
 
 
 </LinearLayout>

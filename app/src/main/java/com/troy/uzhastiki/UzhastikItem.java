@@ -2,15 +2,15 @@ package com.troy.uzhastiki;
 
 public class UzhastikItem {
 
-    private String title;
-    private String story;
-    private boolean isChecked;
+    private final String title;
+    private final String story;
+    private final int id;
 
-    public UzhastikItem(String title,
-                        String recipe,boolean isChecked) {
+    public UzhastikItem(int id, String title,
+                        String recipe) {
         this.title = title;
         this.story = recipe;
-        this.isChecked = isChecked;
+        this.id = id;
     }
 
     public String getTitle() {
@@ -20,8 +20,6 @@ public class UzhastikItem {
     public String getStory() {
         return story;
     }
+    public int getId(){return id;}
 
-    public boolean isChecked() {
-        return isChecked;
-    }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "973263266161",
+    "project_id": "strashilki-53339",
+    "storage_bucket": "strashilki-53339.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973263266161:android:8d74e6a3599cd7569dd6d0",
+        "android_client_info": {
+          "package_name": "com.troy.uzhastiki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973263266161-1j2ch08o28r6jbqsvee9d4ln8to91pkr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPZDfKXotpzKDRDQNLMprcHlJ1HmDBTMk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973263266161-1j2ch08o28r6jbqsvee9d4ln8to91pkr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

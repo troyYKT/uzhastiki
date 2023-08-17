@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Страшилки</string>
-    <string name="about">Вы можете отправить свою историю, либо написать пожелание какой функционал хотели бы видеть.</string>
+    <string name="settings">Настройки</string>
+    <string-array name="shrift_array">
+        <item>Athelas</item>
+        <item>Romic</item>
+        <item>Asul</item>
+        <item>Liberata</item>
+        <item>Georgia</item>
+    </string-array>
 </resources>

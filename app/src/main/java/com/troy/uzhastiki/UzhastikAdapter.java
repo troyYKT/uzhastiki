@@ -1,18 +1,19 @@
 package com.troy.uzhastiki;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.ArrayList;
 
@@ -20,8 +21,8 @@ public class UzhastikAdapter extends RecyclerView.Adapter<UzhastikAdapter.Uzhast
 
     ArrayList<UzhastikItem> UzhastikItemsItems;
     Context context;
-    private InterstitialAd mInterstitialAd;
-    int counter= 0;
+    boolean hide;
+    boolean isreaded;
     public UzhastikAdapter(ArrayList<UzhastikItem> uzhastikItemsItems,
                            Context context) {
         this.UzhastikItemsItems = uzhastikItemsItems;
@@ -36,9 +37,45 @@ public class UzhastikAdapter extends RecyclerView.Adapter<UzhastikAdapter.Uzhast
         return uzhastikViewHolder;
     }
     @Override
-    public void onBindViewHolder(@NonNull UzhastikViewHolder viewHolder, int i) {
-        UzhastikItem uzhastikItem = UzhastikItemsItems.get(i);
+    public void onBindViewHolder(@NonNull UzhastikViewHolder viewHolder, int position) {
+
+        UzhastikItem uzhastikItem = UzhastikItemsItems.get(viewHolder.getAdapterPosition());
         viewHolder.title.setText(uzhastikItem.getTitle());
+
+        SharedPreferences stylePref = context.getSharedPreferences("isread", MODE_PRIVATE);
+        SharedPreferences.Editor prEdit = stylePref.edit();
+
+        int id = UzhastikItemsItems.get(viewHolder.getAdapterPosition()).getId();
+        boolean readed = stylePref.getBoolean("position"+ id,false);
+        if (readed){
+            viewHolder.title.setTextColor(ContextCompat.getColor(context,R.color.grey));
+        }else {
+            viewHolder.title.setTextColor(ContextCompat.getColor(context,R.color.white));
+        }
+        SharedPreferences checkPref = context.getSharedPreferences("hide", MODE_PRIVATE);
+        hide = checkPref.getBoolean("checkbox",false);
+        if (hide){
+            if (readed){
+                viewHolder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+            }
+        }
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                prEdit.putBoolean("position"+ id,true);
+                prEdit.apply();
+                isreaded=true;
+                if (isreaded){
+                    viewHolder.title.setTextColor(ContextCompat.getColor(context,R.color.grey));
+                    //Intent intent = new Intent(mContext, MainActivity.class);
+                    //mContext.startActivity(intent);
+                }else {
+                    viewHolder.title.setTextColor(ContextCompat.getColor(context,R.color.white));
+                }
+                notifyItemChanged(viewHolder.getAdapterPosition());
+                viewHolder.onStartAct();
+            }
+        });
     }
     @Override
     public int getItemCount() {
@@ -54,29 +91,16 @@ public class UzhastikAdapter extends RecyclerView.Adapter<UzhastikAdapter.Uzhast
         }
         @Override
         public void onClick(View v) {
-            counter ++;
-            mInterstitialAd = new InterstitialAd(context);
-            mInterstitialAd.setAdUnitId("ca-app-pub-3727697994870495/5284455386");
-            AdRequest adRequest = new AdRequest.Builder().build();
-            mInterstitialAd.loadAd(adRequest);
             onStartAct();
-            mInterstitialAd.setAdListener(new AdListener() {
-                public void onAdLoaded() {
-                    if (mInterstitialAd.isLoaded()){
-                        mInterstitialAd.show();}
-                }
-                public void onAdClosed() {
-                    // Code to be executed when the interstitial ad is closed.
-                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
-                }
-            });
+
         }
         public void onStartAct(){
             int position = getAdapterPosition();
-            UzhastikItem uzhastikItem = UzhastikItemsItems.get(position);
+            UzhastikItem uzhastikItem = UzhastikItemsItems.get(getAdapterPosition());
             Intent intent = new Intent(context, ReaderActivity.class);
             intent.putExtra("title", uzhastikItem.getTitle());
             intent.putExtra("story", uzhastikItem.getStory());
+            intent.putExtra("id", uzhastikItem.getId());
             context.startActivity(intent);
         }
     }
