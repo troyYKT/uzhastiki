@@ -22,6 +22,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.yandex.metrica.YandexMetrica;
+import com.yandex.metrica.YandexMetricaConfig;
 import com.yandex.mobile.ads.common.AdRequest;
 import com.yandex.mobile.ads.common.AdRequestError;
 import com.yandex.mobile.ads.common.ImpressionData;
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String YANDEX_MOBILE_ADS_TAG = "YandexMobileAds";
     InterstitialAd mInterstitialAd;
     String AdUnitId = "R-M-2139998-1";
+    String API_key = "ce7e131e-e2a0-4171-a9c8-101998383bd9";
     boolean isLoaded=false;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
@@ -49,6 +52,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
+        // Creating an extended library configuration.
+        YandexMetricaConfig config = YandexMetricaConfig.newConfigBuilder(API_key).build();
+        // Initializing the AppMetrica SDK.
+        YandexMetrica.activate(getApplicationContext(), config);
+        // Automatic tracking of user activity.
+        YandexMetrica.enableActivityAutoTracking(this.getApplication());
 
         //Инициализация рекламы
         MobileAds.initialize(this, new InitializationListener() {
